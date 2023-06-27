@@ -5,7 +5,7 @@ CACHE_DIR=$2
 ENV_DIR=$3
 
 
-function install_sops {
+install_sops() {
   echo "------> Installing SOPS"
   curl --silent -L https://github.com/mozilla/sops/releases/download/v3.7.3/sops-v3.7.3.linux --output sops
   chmod +x sops
