@@ -9,7 +9,7 @@ install_sops() {
   curl --silent -L https://github.com/mozilla/sops/releases/download/v3.7.3/sops-v3.7.3.linux --output sops
   chmod +x sops
   mkdir -p "$BUILD_DIR/.heroku-helm-sops"
-  mv sops "$BUILD_DIR/.heroku-helm-sops/sops"
+  mv sops "$BUILD_DIR/.heroku-helm-sops/"
 }
 
 install_yq() {
@@ -19,11 +19,11 @@ install_yq() {
   chmod +x yq
 
   mkdir -p "$BUILD_DIR/.heroku-helm-sops"
-  mv yq "$BUILD_DIR/.heroku-helm-sops/yq"
+  mv yq "$BUILD_DIR/.heroku-helm-sops/"
 }
 
 install_sops
-install_yq
+#install_yq
 
 ls -lah .profile.d
 
