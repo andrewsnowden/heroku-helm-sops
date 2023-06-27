@@ -23,7 +23,7 @@ install_sops() {
 install_sops
 #install_yq
 
-python bin/foo.py
+ls -lah .profile.d
 
 mkdir -p "$BUILD_DIR/.profile.d"
 cp .profile.d/* $BUILD_DIR/.profile.d/
