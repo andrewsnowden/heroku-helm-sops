@@ -13,7 +13,7 @@ install_sops() {
 }
 
 install_yq() {
-  echo "------> Installing YQ"
+  echo "-----> Installing YQ"
   curl --silent -L https://github.com/mikefarah/yq/releases/download/v4.34.1/yq_linux_386 --output yq
   chmod +x yq
 
@@ -26,6 +26,7 @@ install_yq
 
 export PATH="$PATH:$BUILD_DIR/.heroku-helm-sops/"
 
+echo "Try and run Python stuff"
 python bin/foo.py
 
 mkdir -p "$BUILD_DIR/.profile.d"
