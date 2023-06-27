@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -f "$BUILD_DIR/values.yml" ]; then
+if [ -f "$BUILD_DIR/values.yaml" ]; then
   echo "Using SOPS buildpack"
   exit 0
 fi
