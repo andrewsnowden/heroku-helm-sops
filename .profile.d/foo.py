@@ -6,3 +6,6 @@ output = s.read()
 
 print("-" * 80)
 print(output)
+
+with open("foo.output", "w") as f:
+    f.write("foo.output is here")
