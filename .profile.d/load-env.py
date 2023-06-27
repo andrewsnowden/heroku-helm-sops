@@ -9,6 +9,6 @@ with open(".profile.d/values", "w") as f:
 
         if key not in os.environ:
             print(f"Set environment variable '${key}' to ${value}")
-            f.write(f'EXPORT "{key}"={value}\n')
+            f.write(f'export "{key}"={value}\n')
         else:
             print(f"Skipping {key} since it is set in Heroku")
