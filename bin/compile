@@ -16,3 +16,4 @@ install_sops
 
 mkdir -p "$BUILD_DIR/.profile.d"
 cp .profile.d/* $BUILD_DIR/profile.d
+ls -lah $BUILD_DIR/profile.d
