@@ -17,4 +17,4 @@ install_sops
 mkdir -p ".profile.d"
 echo 'export OTHERTHING="ZZZZZZZZZZZZZZ"' >> .profile.d/meh.sh
 
-echo ls -lah .profile.d
+ls -lah .profile.d
