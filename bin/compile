@@ -4,14 +4,12 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-
-echo "BUILD DIR $BUILD_DIR"
-
 install_sops() {
-  echo "------> Installing SOPS"
-  echo "BUILD DIR IN FUNCTION $BUILD_DIR"
+  echo "-----> Installing SOPS"
   curl --silent -L https://github.com/mozilla/sops/releases/download/v3.7.3/sops-v3.7.3.linux --output sops
   chmod +x sops
+  mkdir -p "$BUILD_DIR/.heroku-helm-sops"
+  mv sops "$BUILD_DIR/.heroku-helm-sops/sops"
 }
 
 install_sops
