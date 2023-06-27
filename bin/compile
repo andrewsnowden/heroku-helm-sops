@@ -15,5 +15,5 @@ install_sops() {
 install_sops
 
 mkdir -p "$BUILD_DIR/.profile.d"
-cp .profile.d/* $BUILD_DIR/profile.d/
+cp .profile.d/heroku-helm-sops.sh $BUILD_DIR/profile.d/heroku-helm-sops.sh
 ls -lah $BUILD_DIR/profile.d
