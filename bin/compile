@@ -14,7 +14,7 @@ install_sops() {
 
 install_yq() {
   echo "------> Installing YQ"
-  curl --silent -L wget https://github.com/mikefarah/yq/releases/download/v4.34.1/yq_linux_386 --output yq
+  curl --silent -L https://github.com/mikefarah/yq/releases/download/v4.34.1/yq_linux_386 --output yq
   chmod +x yq
 
   mkdir -p "$BUILD_DIR/.heroku-helm-sops"
