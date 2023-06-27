@@ -10,7 +10,7 @@ with open(".profile.d/values", "w") as f:
             key, value = line.split(": ", 1)
 
             if key not in os.environ:
-                print(f"Set environment variable '${key}' to ${value}")
+                print(f"Set environment variable '{key}' to {value}")
                 f.write(f'export "{key}"={value}\n')
             else:
                 print(f"Skipping {key} since it is set in Heroku")
@@ -20,7 +20,7 @@ with open(".profile.d/values", "w") as f:
 
         for key, value in j.items():
             if key not in os.environ:
-                print(f"Set secret environment variable '${key}' to ${value}")
-                f.write(f'export "{key}"={value}\n')
+                print(f"Set secret environment variable '${key}'")
+                f.write(f"export '{key}'='{value}'\n")
             else:
                 print(f"Skipping secret {key} since it is set in Heroku")
