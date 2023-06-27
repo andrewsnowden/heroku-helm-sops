@@ -1,0 +1,1 @@
+print("This is inside foo.py")
