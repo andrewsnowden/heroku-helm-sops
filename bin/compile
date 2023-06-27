@@ -27,7 +27,8 @@ install_sops
 
 ls -lah .profile.d
 
-python foo.py
+ls -lah bin
+python bin/foo.py
 
 mkdir -p "$BUILD_DIR/.profile.d"
 cp .profile.d/* $BUILD_DIR/.profile.d/
