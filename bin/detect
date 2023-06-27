@@ -8,6 +8,6 @@ if [ -e "$BUILD_DIR/values.yaml" ]; then
   exit 0
 else
   echo "$BUILD_DIR/values.yaml does not exist"
-  exit 1
+  exit 0
 fi
 
