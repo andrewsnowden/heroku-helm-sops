@@ -12,7 +12,16 @@ install_sops() {
   mv sops "$BUILD_DIR/.heroku-helm-sops/sops"
 }
 
+install_yq() {
+  echo "------> Installing YQ"
+  curl --silent -L wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} --output yq
+  chmod +x yq
+  mkdir -p "$BUILD_DIR/.heroku-helm-sops"
+  mv yq "$BUILD_DIR/.heroku-helm-sops/sops"
+}
+
 install_sops
+install_yq
 
 mkdir -p "$BUILD_DIR/.profile.d"
 cp .profile.d/* $BUILD_DIR/.profile.d/
