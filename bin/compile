@@ -24,11 +24,5 @@ install_yq() {
 install_sops
 install_yq
 
-export PATH="$PATH:$BUILD_DIR/.heroku-helm-sops/"
-
-echo "Try and run Python stuff"
-python bin/foo.py
-
 mkdir -p "$BUILD_DIR/.profile.d"
 cp .profile.d/* $BUILD_DIR/.profile.d/
-ls -lah $BUILD_DIR/.profile.d
