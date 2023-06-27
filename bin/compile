@@ -17,14 +17,17 @@ install_yq() {
   curl --silent -L wget https://github.com/mikefarah/yq/releases/download/v4.34.1/yq_linux_386 --output yq
 #  curl --silent -L wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} --output yq
   chmod +x yq
+
   mkdir -p "$BUILD_DIR/.heroku-helm-sops"
-  mv yq "$BUILD_DIR/.heroku-helm-sops/sops"
+  mv yq "$BUILD_DIR/.heroku-helm-sops/yq"
 }
 
 install_sops
 install_yq
 
 ls -lah .profile.d
+
+python foo.py
 
 mkdir -p "$BUILD_DIR/.profile.d"
 cp .profile.d/* $BUILD_DIR/.profile.d/
