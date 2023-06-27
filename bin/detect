@@ -1,13 +1,13 @@
 #!/bin/sh
 
 echo "------> Checking SOPS buildback"
-echo "$BUILD_DIR/values.yaml"
+echo "values.yaml"
 
-if [ -e "$BUILD_DIR/values.yaml" ]; then
+if [ -e "values.yaml" ]; then
   echo "Using SOPS buildpack"
   exit 0
 else
-  echo "$BUILD_DIR/values.yaml does not exist"
+  echo "values.yaml does not exist"
   exit 0
 fi
 
