@@ -19,7 +19,8 @@ def load_values(filename: str, f):
                     f.write(f'export "{key}"={value}\n')
                 else:
                     print(f"    Skipping {key} since it is set in Heroku")
-    pass
+    else:
+        print(f">>> Unable to load values from {filename} - file does not exist")
 
 
 def load_secrets(filename: str, f):
@@ -41,11 +42,13 @@ def load_secrets(filename: str, f):
                     print(f"    Skipping secret {key} since it is set in Heroku")
 
         os.remove("decrypted.json")
+    else:
+        print(f">>> Unable to load secrets from {filename} - file does not exist")
 
 
 def load():
     with open(".profile.d/values", "w") as f:
-        filenames = os.environ.get("HEROKU_CHART_FILES", "values.yaml secrets.yaml")
+        filenames = os.environ.get("HELM_VALUES_FILES", "values.yaml secrets.yaml")
         print(f">>> Load environment values from {filenames}")
 
         for filename in filenames.split(" "):
